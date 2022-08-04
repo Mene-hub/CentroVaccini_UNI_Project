@@ -43,6 +43,9 @@ public class JsonReadWrite {
      * @since 17/09/2021
      */
     public static void RegistraCentroVaccinale(CentroVaccinale nuovoCentro) throws IOException {
+
+        //TODO dopo la connessione iniziale con il server, inviare l'oggetto Centro vaccinale per il salvataggio nel database
+
         if(nuovoCentro!= null) {
             List<CentroVaccinale> centri = leggiCentri();
             centri.add(nuovoCentro);
@@ -54,11 +57,15 @@ public class JsonReadWrite {
     }
 
     /**
-     * Questo Metodo legge la lista di centri vaccinali per accodarli a quello nuovo inserito
+     * Questo Metodo legge la lista di centri vaccinali per la seleziona alla registrazione di una vaccinazione
      * @author Claudio Menegotto
      * @since 17/09/2021
      */
     public static List<CentroVaccinale> leggiCentri() throws IOException {
+
+        //TODO dopo la connessione iniziale con il server, viene richiesta la lista di tutti i centri disponibili, per la selezione del centro alla registrazione
+        // di una nuova vaccinazione
+
         List<CentroVaccinale> centri = new ArrayList<>();
         File file = new File(FilePaths.CentriVaccinali.toString());
         if(file.exists() && file.length()>0) {
@@ -86,6 +93,9 @@ public class JsonReadWrite {
      * @author Daniel Satriano
      */
     public static void registraVaccinato(UtenteVaccinato vaccinato) throws IOException {
+
+        //TODO dopo la connessione iniziale con il server, inviare l'oggetto UtenteVaccinato per il salvataggio nel database
+
         if(vaccinato!= null) {
             List<UtenteVaccinato> vaccinati = leggiVaccinati();
             vaccinati.add(vaccinato);
@@ -102,6 +112,9 @@ public class JsonReadWrite {
      * @since 17/09/2021
      */
     public static List<UtenteVaccinato> leggiVaccinati() throws IOException {
+
+        //TODO dopo la connessione iniziale con il server, richiedere la lista di utenti vaccinati per lo storico
+
         List<UtenteVaccinato> utenti = new ArrayList<>();
         File file = new File(FilePaths.VaccinatiNomeCentro.toString());
         if(file.exists() && file.length()>0) {
